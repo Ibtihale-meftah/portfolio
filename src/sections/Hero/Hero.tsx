@@ -8,6 +8,7 @@ import {
   ArrowDown,
   ArrowRight,
   Download,
+  FileText,
   GraduationCap,
   MapPin,
   Sparkles,
@@ -22,6 +23,8 @@ export function Hero() {
       : { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
   };
+
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <section
@@ -99,7 +102,8 @@ export function Hero() {
             </span>
           </div>
 
-          <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+          {/* Action buttons */}
+          <div className="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap lg:justify-start">
             <a
               href="#projects"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-7 py-3.5 font-semibold text-background shadow-lg shadow-accent/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-hover"
@@ -113,12 +117,21 @@ export function Hero() {
             </a>
 
             <a
-              href="/cv/CV-IBTIHALE-MEFTAH.pdf"
+              href={`${baseUrl}cv/CV-IBTIHALE-MEFTAH.pdf`}
               download="CV-IBTIHALE-MEFTAH.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-border-custom bg-surface/70 px-7 py-3.5 font-semibold text-foreground transition-all duration-300 hover:border-accent/50 hover:bg-surface-hover"
             >
               <Download size={18} aria-hidden="true" />
-              Télécharger mon CV
+              CV classique
+            </a>
+
+            <a
+              href={`${baseUrl}cv/CV_Ibtihale_Meftah_ATS.pdf`}
+              download="CV-IBTIHALE-MEFTAH-ATS.pdf"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-accent/40 bg-accent/10 px-7 py-3.5 font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-accent/20"
+            >
+              <FileText size={18} aria-hidden="true" />
+              Télécharger CV ATS
             </a>
           </div>
 
@@ -155,8 +168,8 @@ export function Hero() {
 
           <div className="relative overflow-hidden rounded-[2rem] border border-accent/30 bg-surface p-2 shadow-2xl shadow-accent/10">
             <img
-              src="/images/ibti_photo_cv.png"
-              alt="Portrait professionnel d'Ibti hale Meftah"
+              src={`${baseUrl}images/ibti_photo_cv.png`}
+              alt="Portrait professionnel d'Ibtihale Meftah"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-center"
               fetchPriority="high"
             />
