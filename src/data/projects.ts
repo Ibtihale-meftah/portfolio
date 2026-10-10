@@ -20,6 +20,8 @@ export interface PortfolioProject {
   videos: ProjectVideo[];
 }
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export const featuredProject: PortfolioProject = {
   id: "kofert",
   title: "KOFERT Inspection Platform",
@@ -36,16 +38,16 @@ export const featuredProject: PortfolioProject = {
     "Docker",
   ],
   cover: {
-    src: "/projects/kofert/dashboard.png",
+    src: `${baseUrl}projects/kofert/dashboard.png`,
     alt: "Dashboard administrateur KOFERT",
   },
   videos: [
     {
-      src: "/projects/kofert/demo-web.mp4",
+      src: `${baseUrl}projects/kofert/demo-web.mp4`,
       title: "Démonstration de l'application Web",
     },
     {
-      src: "/projects/kofert/demo-mobile.mp4",
+      src: `${baseUrl}projects/kofert/demo-mobile.mp4`,
       title: "Démonstration de l'application mobile",
     },
   ],
@@ -66,7 +68,7 @@ export const projects: PortfolioProject[] = [
       "Firebase",
     ],
     cover: {
-      src: "/projects/flowers/flowers.png",
+      src: `${baseUrl}projects/flowers/flowers.png`,
       alt: "Application Android de classification de fleurs",
     },
     videos: [],
@@ -80,7 +82,7 @@ export const projects: PortfolioProject[] = [
       "Application Web de gestion du pointage des employés, développée dans le cadre d'un projet de fin d'année.",
     technologies: ["React", "Node.js", "MySQL"],
     cover: {
-      src: "/projects/pointage/pointage.png",
+      src: `${baseUrl}projects/pointage/pointage.png`,
       alt: "Interface de gestion du pointage",
     },
     videos: [],
@@ -94,7 +96,7 @@ export const projects: PortfolioProject[] = [
       "Application mobile guide touristique pour la Coupe du Monde 2030 avec gestion eVisa et QR Fan ID.",
     technologies: ["React Native", "Expo", "Mobile"],
     cover: {
-      src: "/projects/morocco/morocco.png",
+      src: `${baseUrl}projects/morocco/morocco.png`,
       alt: "Application mobile MoroccoGo 2030",
     },
     videos: [],
@@ -108,7 +110,7 @@ export const projects: PortfolioProject[] = [
       "Application de gestion des ressources humaines : employés, congés, départements et suivi des données.",
     technologies: ["ASP.NET Core", "SQL Server"],
     cover: {
-      src: "/projects/rh/rh.png",
+      src: `${baseUrl}projects/rh/rh.png`,
       alt: "Tableau de bord de gestion RH",
     },
     videos: [],
@@ -122,7 +124,7 @@ export const projects: PortfolioProject[] = [
       "Application de gestion des stocks permettant de gérer les produits, les mouvements de stock et le suivi des entrées et sorties.",
     technologies: ["Java", "JavaFX", "MySQL"],
     cover: {
-      src: "/projects/stocks/stocks.png",
+      src: `${baseUrl}projects/stocks/stocks.png`,
       alt: "Interface de gestion des stocks",
     },
     videos: [],
@@ -141,7 +143,7 @@ export const projects: PortfolioProject[] = [
       "Mathématiques",
     ],
     cover: {
-      src: "/projects/lyme/lyme.png",
+      src: `${baseUrl}projects/lyme/lyme.png`,
       alt: "Visualisation mathématique de la maladie de Lyme",
     },
     videos: [],
@@ -155,7 +157,7 @@ export const projects: PortfolioProject[] = [
       "Étude et recherche sur le Cloud Computing : concepts, technologies, modèles de déploiement et bénéfices des solutions cloud pour les organisations.",
     technologies: ["Cloud Computing", "Étude"],
     cover: {
-      src: "/projects/eviosys/eviosys.png",
+      src: `${baseUrl}projects/eviosys/eviosys.png`,
       alt: "Eviosys, a Sonoco Company",
     },
     videos: [],
@@ -173,7 +175,7 @@ export const projects: PortfolioProject[] = [
       "Processus métier",
     ],
     cover: {
-      src: "/projects/facimag/facimag.png",
+      src: `${baseUrl}projects/facimag/facimag.png`,
       alt: "Entreprise FACIMAG",
     },
     videos: [],

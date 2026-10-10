@@ -1,10 +1,12 @@
 
 import { useEffect, useState } from "react";
+
 import {
   AnimatePresence,
   motion,
   useReducedMotion,
 } from "motion/react";
+
 import {
   ArrowUpRight,
   Monitor,
@@ -12,6 +14,7 @@ import {
   Smartphone,
   X,
 } from "lucide-react";
+
 import {
   featuredProject,
   projects,
@@ -56,6 +59,7 @@ function ProjectImage({
 
 export function Projects() {
   const reduceMotion = useReducedMotion();
+
   const [activeVideo, setActiveVideo] =
     useState<ProjectVideo | null>(null);
 
@@ -104,6 +108,7 @@ export function Projects() {
         <motion.div {...entrance} className="mb-10">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-0.5 w-8 bg-accent" />
+
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               Mes réalisations
             </span>
@@ -122,6 +127,7 @@ export function Projects() {
           </p>
         </motion.div>
 
+        {/* Featured KOFERT project */}
         <motion.article
           {...entrance}
           className="relative mb-4 overflow-hidden rounded-3xl border border-border-custom bg-surface/80"
@@ -203,6 +209,7 @@ export function Projects() {
               </div>
             </div>
 
+            {/* Desktop and mobile mockups */}
             <div className="relative min-w-0 pb-5">
               <div className="relative mr-5 rounded-2xl border border-accent/30 bg-[#080714] p-2 shadow-[0_20px_80px_rgba(139,92,246,0.18)] sm:mr-14">
                 <div className="overflow-hidden rounded-lg bg-white">
@@ -219,9 +226,10 @@ export function Projects() {
                 className="absolute -bottom-2 right-0 w-[27%] min-w-[95px] max-w-[170px] rounded-[1.6rem] border-[5px] border-[#272333] bg-black p-1 shadow-[0_20px_50px_rgba(0,0,0,0.65)] sm:border-[7px]"
               >
                 <div className="absolute left-1/2 top-2 z-10 h-2 w-12 -translate-x-1/2 rounded-full bg-black" />
+
                 <div className="overflow-hidden rounded-[1rem] bg-[#f5faf4]">
                   <ProjectImage
-                    src="/projects/kofert/mobile-shifts.png"
+                    src={`${import.meta.env.BASE_URL}projects/kofert/mobile-shifts.png`}
                     alt="Écran Flutter de sélection des équipes et shifts KOFERT"
                     className="aspect-[9/19] w-full object-cover object-top"
                   />
@@ -239,6 +247,7 @@ export function Projects() {
           </div>
         </motion.article>
 
+        {/* Other projects */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <motion.article
@@ -282,6 +291,7 @@ export function Projects() {
         </div>
       </div>
 
+      {/* Video modal */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -303,6 +313,7 @@ export function Projects() {
                 <h3 className="text-base font-semibold sm:text-xl">
                   {activeVideo.title}
                 </h3>
+
                 <button
                   type="button"
                   autoFocus
